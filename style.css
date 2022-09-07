@@ -1,0 +1,330 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("./fonts/Inter-Regular.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 3fr 1fr;
+  height: 100vh;
+  background: #1a1b2a;
+  font-family: "Inter";
+  overflow: hidden;
+}
+.nav {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.right {
+  grid-area: 1 / 2 / 6 / 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+.texte {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.slider {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.menu {
+  display: grid;
+  grid-template: 1fr / 1fr 3fr;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.logo svg {
+  transform: scale(1.4);
+}
+.menu nav {
+  padding: 0 10% 0 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.animmenu1 {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition .4s .4s ease-out forwards;
+}
+.animmenu2 {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition .4s .6s ease-out forwards;
+}
+.animmenu3 {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition .4s .8s ease-out forwards;
+}
+.menu nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 15px;
+  font-style: normal;
+  border: 3px solid transparent;
+  border-radius: 30px;
+  padding: 12px 20px;
+  transition: 0.2s;
+}
+.menu nav a:hover {
+  border: 3px solid #258a2f;
+}
+.texte {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding: 0 12% 0 15%;
+}
+.texte h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6em;
+  line-height: 70px;
+  color: #ffffff;
+  letter-spacing: 0.07em;
+  margin: 4vh 0;
+  position: relative;
+  left: -5px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition .4s .5s ease-out forwards;
+}
+.texte h2 {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition .4s .4s ease-out forwards;
+}
+.texte p {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Inter-Regular";
+  font-size: 1.3em;
+  line-height: 4vh;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition .4s .6s ease-out forwards;
+}
+.more {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.5vh;
+  position: relative;
+  left: -20px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition .4s .7s ease-out forwards;
+}
+.more .boxcercle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 94.55px;
+  height: 94.55px;
+}
+.more .circle2:hover + .circle1 {
+  animation: 1s alternate animfleche;
+}
+.more .circle2:active + .circle1 {
+  animation: 5s normal ease-in-out animflecheclick;
+}
+.more .circle1 {
+  position: relative;
+  width: 94.56px;
+  height: 94.56px;
+  border: 2.5px solid #313031;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.more .circle2 {
+  position: absolute;
+  width: 64.44px;
+  height: 64.44px;
+  border: 2.5px solid #464546;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.more .fleche {
+  transform: scale(1.2);
+}
+.more p {
+  margin-left: 10px;
+  font-family: "Inter";
+}
+.cercle {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
+    rgba(0, 85, 10, 0.47) -127.5deg,
+    #002c4b 35.62deg,
+    rgba(0, 85, 10, 0.47) 232.5deg,
+    #002c4b 395.63deg
+  );
+  border: 1.15836px solid #258a2f;
+}
+.bgCercle {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
+    #258a2f -156.76deg,
+    #29582f 23deg,
+    #258a2f 203.24deg,
+    #29582f 383deg
+  );
+  filter: blur(579.179px);
+}
+.meduse {
+  background: url(./img/meduse.png) center / cover no-repeat;
+  height: 650px;
+  width: 550px;
+  transform: scale(1.3);
+  z-index: 2;
+  margin-left: 70px;
+}
+.slider {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5vw;
+  opacity: 0;
+  animation: bounce-left 1s ease .8s 1 normal forwards;
+}
+.slider p {
+  margin: 0 10px;
+  color: white;
+  font-family: "Inter-Regular";
+  font-size: 1.2em;
+}
+.slider #barre {
+  height: 2.5px;
+  width: 300px;
+  background-color: salmon;
+}
+.slider #barre::-webkit-progress-bar {
+  background-color: #464546;
+}
+progress::-webkit-progress-value {
+  background-color: white;
+  height: 2.5px;
+}
+.sphere {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 42vw;
+  bottom: -130px;
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
+    #258a2f -156.76deg,
+    #29582f 23deg,
+    #258a2f 203.24deg,
+    #29582f 383deg
+  );
+  border-radius: 50%;
+  opacity: 0;
+  animation: apparition .4s 2s ease-out forwards;
+}
+@keyframes animfleche {
+  from {
+    width: 94.56px;
+    height: 94.56px;
+  }
+  30% {
+    width: 64.44px;
+    height: 64.44px;
+  }
+  to {
+    width: 94.56px;
+    height: 94.56px;
+  }
+}
+@keyframes animflecheclick {
+  from {
+    width: 94.56px;
+    height: 94.56px;
+  }
+  10% {
+    width: 64.44px;
+    height: 64.44px;
+  }
+  to {
+  }
+}
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bounce-left {
+  0%{
+    transform: translateX(-45px);
+    opacity: 0;
+  }
+  25%{
+    transform: translateX(0);
+    opacity: .3;
+  }
+  40%{
+    transform: translateX(-24px);
+    opacity: .6;
+  }
+  55%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  65%{
+    transform: translateX(-12px);
+    opacity: 1;
+  }
+  75%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  82%{
+    transform: translateX(-6px);
+    opacity: 1;
+  }
+  87%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  93%{
+    transform: translateX(-4px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
